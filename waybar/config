@@ -1,0 +1,149 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["clock", "wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces", "hyprland/language"],
+    "modules-right": ["tray", "temperature", "memory", "cpu", "battery", "network", "pulseaudio", "custom/lock", "custom/logout", "custom/restart", "custom/power"],
+
+    "cpu": {
+        "interval": 1,
+        "format": "{}%  |",
+        "max-length": 10,
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "{}% 🎟|",
+        "max-length": 10
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C  |"
+    },
+
+    "hyprland/workspaces": {
+		"format": "{name}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+		}
+    },
+
+    "hyprland/language": {
+        "format": "{shortDescription}",
+    },
+
+    "wlr/taskbar": {
+            "format": "{icon}",
+            "tooltip": true,
+            "tooltip-format": "{title}",
+            "on-click": "activate",
+            "on-click-middle": "close",
+            "active-first": false,
+            "icon-size": 20,
+            "ignore-list": [
+            "kitty"
+            ],
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 8
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "interval": 1,
+        "format": "{ifname}",
+        "format-wifi": "  {signalStrength}%",
+        "format-disconnected": "Disconnedted", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": ".config/waybar/scripts/network_menu.sh",
+    },
+
+    "clock": {
+        "interval":1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%A, %B %d, %Y}",
+        "format": "󰥔 {:%I:%M:%S %p}",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffA500'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ffA500'><b><u>{}</u></b></span>"
+                    }
+        },
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["󰃟", "󰃞", "󰃝", "󰃜", "󰃛", "󰃚", "󰃙"]
+    },
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} |",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "zenity --question --text='Are you sure you want to Lock?' --title='Lock confirmation' && hyprlock",
+        "format": "󰍁",
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "zenity --question --text='Are you sure you want to Shut Down?' --title='Poweroff confirmation' && poweroff",
+        "format": "󰐥"
+    },
+    "custom/restart": {
+        "on-click": "zenity --question --text='Are you sure you want to restart?' --title='Restart confirmation' && systemctl reboot",
+        "tooltip": false,
+        "format": "🗘",
+    },
+    "custom/logout": {
+        "tooltip": false,
+        "on-click": "zenity --question --title='Logout confirmation' --text='Are you sure you want to log out?' && hyprctl dispatch exit",
+        "format": ""
+    },
+
+    "custom/appmenu": {
+        "format": "󰻀",
+        "format-icon": "󰻀",
+        "rotate": 0,
+        "on-click": "~/.config/waybar/runwofi.sh"
+    },
+
+    "keyboard-state": {
+        "numlock": false,
+        "capslock": false,
+        "format": "{layout}"
+    }
+}

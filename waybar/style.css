@@ -1,0 +1,240 @@
+@import 'orange_black.css';
+* {
+    min-height: 0;
+    font-size: 15px;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+}
+
+window#waybar {
+    color: @accent;
+    background-color: transparent;
+}
+
+#workspaces button {
+    margin: 5px;
+    color: @accent;
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+#workspaces button.focused {
+    color: black;
+    background-color: transparent;
+}
+
+#cpu{
+    font-size: 15px;
+}
+
+#language{
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 50px; 
+    border: 2px solid @accent;
+    background-color: @translucent;
+}
+
+#battery{
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+#battery.warning {
+    color: black;
+    background-color: #e5c07b;
+}
+
+#battery.critical {
+    color: white;
+    background-color: #e06c75;
+}
+
+#pulseaudio {
+    color: @accent;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 14px;
+    border-radius: 50px;
+    padding-right: 14px;
+    border: 2px @accent solid;
+    background-color: @translucent;
+    transition: all 0.2s ease-in-out;
+}
+#pulseaudio:hover{
+    background-color: @accent;
+    color: rgba(30, 30, 30, 1);
+    border-color: rgba(30, 30, 30, 1);
+}
+
+#pulseaudio.muted {
+    background-color: red;
+}
+
+#tray {
+    padding-right: 10px;
+}
+
+#waybar #clock {
+    color: @accent;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius:50px;
+    padding-right: 10px;
+    border: 2px @accent solid;
+    background-color: @translucent;
+    transition: all 0.2s ease-in-out;
+}
+#waybar #clock:hover{
+    color: rgba(30,30,30,1);
+    background-color: @accent;
+    border-color: rgba(30,30,30,1);
+}
+
+#waybar #custom-lock {
+    color: @accent;
+    margin-left: 7px;
+    margin-right: 0px;
+    font-size: 1.5em;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    border-left: 2px solid @accent;
+    background-color: @translucent;
+    transition: background 0.2s ease-in-out;
+}
+
+#waybar #custom-lock:hover {
+    color: @base;
+    background: @accent;
+}
+
+#waybar #custom-power {
+    color: @accent;
+    font-size: 1.5em;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 0px 50px 50px 0px;
+    border-right: 2px solid @accent;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    background-color: @translucent;
+    transition: background 0.2s ease-in-out;
+    margin-left: 0px;
+}
+
+#waybar #custom-power:hover {
+    color: @base;
+    background: @accent;
+}
+
+#waybar #custom-restart {
+    font-size: 20px;
+    padding-right: 9px;
+    padding-left: 12px;
+    padding-top: 5px;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    color: @accent;
+    background-color: @translucent;
+    transition: background 0.2s ease-in-out;
+}
+#waybar #custom-restart:hover {
+    color: @base;
+    background: @accent;
+}
+
+
+#waybar #custom-logout {
+    color: @accent;
+    font-size: 1.2em;
+    padding-left: 13px;
+    padding-right: 17px;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    background-color: @translucent;
+    transition: background 0.2s ease-in-out;
+}
+#waybar #custom-logout:hover {
+    color: @base;
+    background: @accent;
+}
+
+#waybar .tooltip {
+    color: white;
+    padding: 0.3em;
+    font-size: 0.9em;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+#waybar {
+    padding: 5px;
+    color: #d8d8d8;
+    border-radius: 50px;
+    background-color: #282828;
+    font-family: 'Roboto', sans-serif;
+}
+
+#workspaces{
+    color: @accent;
+    border-radius: 50px;
+    border: 2px @accent solid;
+    transition: all 0s ease-in;
+    background-color: @translucent;
+}
+
+#workspaces button {
+    transition: all 0.7s ease-out;
+}
+
+#workspaces button.active{
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
+    background-color: @accent;
+    transition: all 0.2s ease-in-out;
+}
+
+#custom-appmenu{
+    color: @accent;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-left: 13px;
+    border-radius: 50px;
+    padding-right: 16px;
+    border: 2px @accent solid;
+    transition: 0.2s ease-in-out;
+    background-color: @translucent;
+}
+#custom-appmenu:hover{
+    background-color: @accent;
+    color: rgba(30, 30, 30, 1);
+    border-color: rgba(30, 30, 30, 1);
+}
+
+#taskbar{
+    margin-left: 10px;
+    border-radius: 50px;
+    border: 2px @accent solid;
+    background-color: @translucent;
+}
+
+#taskbar button{
+    margin: 5px;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+#taskbar button.active{
+    margin: 5px;
+    border-radius: 50px;
+    background-color: @accent;
+    transition: all 0.2s ease-in-out;
+}
+
