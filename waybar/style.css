@@ -10,20 +10,38 @@ window#waybar {
     background-color: transparent;
 }
 
-#workspaces button {
-    margin: 5px;
-    color: @accent;
-    border-radius: 50px;
-    background-color: transparent;
-}
-
-#workspaces button.focused {
-    color: black;
-    background-color: transparent;
+#battery{
+    border-right: 2px solid @accent;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    padding-right: 15px;
+    border-radius: 0px 50px 50px 0px;
+    background-color: @translucent;
+    margin-right: 10px;
 }
 
 #cpu{
-    font-size: 15px;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    background-color: @translucent;
+    margin:0px;
+}
+
+#memory{
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    background-color: @translucent;
+    padding-top: 5px;
+}
+
+#temperature{
+    border-left: 2px solid @accent;
+    border-top: 2px solid @accent;
+    border-bottom: 2px solid @accent;
+    padding-left: 15px;
+    border-radius: 50px 0px 0px 50px;
+    background-color: @translucent;
+    margin: 0px;
 }
 
 #language{
@@ -34,21 +52,6 @@ window#waybar {
     border-radius: 50px; 
     border: 2px solid @accent;
     background-color: @translucent;
-}
-
-#battery{
-    font-size: 15px;
-    margin-right: 10px;
-}
-
-#battery.warning {
-    color: black;
-    background-color: #e5c07b;
-}
-
-#battery.critical {
-    color: white;
-    background-color: #e06c75;
 }
 
 #pulseaudio {
@@ -142,11 +145,11 @@ window#waybar {
     background-color: @translucent;
     transition: background 0.2s ease-in-out;
 }
+
 #waybar #custom-restart:hover {
     color: @base;
     background: @accent;
 }
-
 
 #waybar #custom-logout {
     color: @accent;
@@ -184,18 +187,20 @@ window#waybar {
     color: @accent;
     border-radius: 50px;
     border: 2px @accent solid;
-    transition: all 0s ease-in;
     background-color: @translucent;
 }
 
 #workspaces button {
+    margin: 5px;
+    border-radius: 50px;
     transition: all 0.7s ease-out;
+    background-color: rgba(222, 85, 0, 0.1);
 }
 
 #workspaces button.active{
     color: black;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 50px;
     background-color: @accent;
     transition: all 0.2s ease-in-out;
@@ -212,6 +217,7 @@ window#waybar {
     transition: 0.2s ease-in-out;
     background-color: @translucent;
 }
+
 #custom-appmenu:hover{
     background-color: @accent;
     color: rgba(30, 30, 30, 1);

@@ -5,25 +5,36 @@
     "modules-center": ["hyprland/workspaces", "hyprland/language"],
     "modules-right": ["tray", "temperature", "memory", "cpu", "battery", "network", "pulseaudio", "custom/lock", "custom/logout", "custom/restart", "custom/power"],
 
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon} ",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
+    },
+
     "cpu": {
         "interval": 1,
-        "format": "{}%  |",
+        "format": "{}%   ",
         "max-length": 10,
     },
 
     "memory": {
         "interval": 1,
-        "format": "{}% 🎟|",
+        "format": "{}% 🎟 ",
         "max-length": 10
     },
 
     "temperature": {
         "critical-threshold": 80,
-        "format": "{temperatureC}°C  |"
+        "format": "{temperatureC}°C  "
     },
 
     "hyprland/workspaces": {
-		"format": "{name}",
+		"format": "",
         "persistent-workspaces": {
             "1": [],
             "2": [],
@@ -57,11 +68,11 @@
     "network": {
         "interface": "wlan0",
         "interval": 1,
-        "format": "{ifname}",
+        "format": "Disconnected",
         "format-wifi": "  {signalStrength}%",
         "format-disconnected": "Disconnedted", //An empty format will hide the module.
         "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+        "tooltip-format-wifi": "{essid}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": ".config/waybar/scripts/network_menu.sh",
@@ -91,17 +102,6 @@
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["󰃟", "󰃞", "󰃝", "󰃜", "󰃛", "󰃚", "󰃙"]
-    },
-
-    "battery": {
-        "interval": 60,
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon} |",
-        "format-icons": ["", "", "", "", ""],
-        "max-length": 25
     },
 
     "pulseaudio": {
